@@ -64,7 +64,7 @@ def classify(file_path):
     print(sign)
     return(sign) 
 
-
+@csrf_exempt
 def predictImage(request):
     print (request)
     print (request.POST.dict())
