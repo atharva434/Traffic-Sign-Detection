@@ -24,7 +24,6 @@ from django.conf import settings
 from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('^$',views.index,name='homepage'),
     url('predictImage',views.predictImage,name='predictImage'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
