@@ -4,7 +4,7 @@ import numpy as np
 from keras.models import load_model
 from PIL import Image
 from keras.preprocessing import image
-
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
@@ -63,11 +63,7 @@ def classify(file_path):
     sign = classes[pred+1]
     print(sign)
     return(sign) 
-def index(request):
-    context={'a':1}
-    return render(request,'crop_index.html',context)
 
-img_height, img_width=224,224
 
 def predictImage(request):
     print (request)
@@ -81,4 +77,4 @@ def predictImage(request):
 
 
     context={'filePathName':filePathName,'predictedLabel':prediction_label}
-    return render(request,'crop_index.html',context)
+   return response.JsonResponse(prediction_label,safe=False)
