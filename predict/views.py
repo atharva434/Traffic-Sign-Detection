@@ -4,9 +4,9 @@ import numpy as np
 from keras.models import load_model
 from PIL import Image
 from keras.preprocessing import image
-from django.views.decorators.csrf import csrf_exempt
+from django.http import response
 # Create your views here.
-
+from django.views.decorators.csrf import csrf_exempt
 
 model=load_model('models/Traffic.h5')
 classes = { 1:'Speed limit (20km/h)',
@@ -64,10 +64,9 @@ def classify(file_path):
     print(sign)
     return(sign) 
 
+img_height, img_width=224,224
 @csrf_exempt
 def predictImage(request):
-    print (request)
-    print (request.POST.dict())
     fileObj=request.FILES['filePath']
     fs=FileSystemStorage()
     filePathName=fs.save(fileObj.name,fileObj)
