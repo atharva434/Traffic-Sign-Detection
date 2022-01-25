@@ -77,4 +77,4 @@ def predictImage(request):
 
 
     context={'filePathName':filePathName,'predictedLabel':prediction_label}
-   return response.JsonResponse(prediction_label,safe=False)
+    return response.JsonResponse(prediction_label,safe=False)
