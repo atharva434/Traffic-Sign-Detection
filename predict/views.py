@@ -8,7 +8,7 @@ from keras.preprocessing import image
 # Create your views here.
 
 
-model=load_model('models\Traffic.h5')
+model=load_model('models/Traffic.h5')
 classes = { 1:'Speed limit (20km/h)',
             2:'Speed limit (30km/h)',      
             3:'Speed limit (50km/h)',       
