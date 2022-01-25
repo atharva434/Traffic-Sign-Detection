@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 import numpy as np
 from keras.models import load_model
-from PIL import ImageTk, Image
+from PIL import Image
 from keras.preprocessing import image
 
 # Create your views here.
